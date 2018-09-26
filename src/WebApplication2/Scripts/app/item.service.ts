@@ -10,42 +10,42 @@ export class ItemService {
     private baseUrl = "api/items/";  // web api URL 
 
     // calls the [GET] /api/items/GetLatest/{n} Web API method to retrieve the latest items. 
-    getLatest(num?: number) {
-        var url = this.baseUrl + "GetLatest/";
+    getLatest(num?: number):any {
+        var url:string = this.baseUrl + "GetLatest/";
         if (num != null) { url += num; }
         return this.http.get(url)
-            .map(response => response.json())
+            .map((response:Response) => response.json())
             .catch(this.handleError);
     }
 
     // calls the [GET] /api/items/GetMostViewed/{n} Web API method to retrieve the most viewed items. 
-    getMostViewed(num?: number) {
-        var url = this.baseUrl + "GetMostViewed/";
+    getMostViewed(num?: number):any {
+        var url:string = this.baseUrl + "GetMostViewed/";
         if (num != null) { url += num; }
         return this.http.get(url)
-            .map(response => response.json())
+            .map((response: Response) => response.json())
             .catch(this.handleError);
     }
 
     // calls the [GET] /api/items/GetRandom/{n} Web API method to retrieve n random items. 
-    getRandom(num?: number) {
-        var url = this.baseUrl + "GetRandom/";
+    getRandom(num?: number):any {
+        var url:string = this.baseUrl + "GetRandom/";
         if (num != null) { url += num; }
         return this.http.get(url)
-            .map(response => response.json())
-            .catch(this.handleError);
-    } 
-
-    // calls the [GET] /api/items/{id} Web API method to retrieve the item with the given id. 
-    get(id: number) {
-        if (id == null) { throw new Error("id is required."); }
-        var url = this.baseUrl + id;
-        return this.http.get(url)
-            .map(res => <Item>res.json())
+            .map((response: Response) => response.json())
             .catch(this.handleError);
     }
 
-    private handleError(error: Response) {
+    // calls the [GET] /api/items/{id} Web API method to retrieve the item with the given id. 
+    get(id: number):any {
+        if (id == null) { throw new Error("id is required."); }
+        var url:string = this.baseUrl + id;
+        return this.http.get(url)
+            .map((res: Response) => <Item>res.json())
+            .catch(this.handleError);
+    }
+
+    private handleError(error: Response):any {
         // output errors to the console. 
         console.error(error);
         return Observable.throw(error.json().error || "Server error");

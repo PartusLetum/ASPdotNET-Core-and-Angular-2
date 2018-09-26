@@ -13,6 +13,7 @@ import { ItemService } from "./item.service";
                 <span>{{item.Title}}</span> 
             </li> 
         </ul> 
+        <item-detail *ngIf="selectedItem" [item]="selectedItem"></item-detail>
     `,
     styles: [` 
         ul.items li {  
@@ -31,19 +32,19 @@ export class ItemListComponent implements OnInit {
 
     constructor(private itemService: ItemService) { }
 
-    ngOnInit() {
+    ngOnInit():void {
         this.getLatest();
     }
 
-    getLatest() {
+    getLatest():void {
         this.itemService.getLatest()
             .subscribe(
-            latestItems => this.items = latestItems,
-            error => this.errorMessage = <any>error
+            (latestItems: any) => this.items = latestItems,
+            (error: any) => this.errorMessage = <any>error
             );
     }
 
-    onSelect(item: Item) {
+    onSelect(item: Item):void {
         this.selectedItem = item;
         console.log("item with Id " + this.selectedItem.Id + " has been selected.");
     }
