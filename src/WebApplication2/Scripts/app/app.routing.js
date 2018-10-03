@@ -31,7 +31,7 @@ System.register(["@angular/router", "./home.component", "./about.component", "./
                 },
                 {
                     path: "home",
-                    redirectTo: "",
+                    redirectTo: ""
                 },
                 {
                     path: "about",

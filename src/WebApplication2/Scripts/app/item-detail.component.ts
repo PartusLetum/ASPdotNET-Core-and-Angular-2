@@ -7,7 +7,7 @@ import { ItemService } from "./item.service";
     selector: "item-detail",
     template: `
         <div *ngIf="item" class="item-details">
-            <h2>{{item.Title}} - Detail View</h2>
+            <h2>{item.Title} - Detail View</h2>
             <ul>
                 <li>
                     <label>Title:</label>
