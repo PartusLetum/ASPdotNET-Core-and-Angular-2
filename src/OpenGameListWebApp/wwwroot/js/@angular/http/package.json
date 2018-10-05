@@ -2,7 +2,7 @@
   "_args": [
     [
       "@angular/http@2.0.0-rc.5",
-      "C:\\Users\\Christopher\\documents\\visual studio 2015\\Projects\\WebApplication2\\src\\WebApplication2"
+      "C:\\Users\\christopher.new\\Documents\\Projects\\Personal\\ASPdotNET-Core-and-Angular-2\\src\\OpenGameListWebApp"
     ]
   ],
   "_from": "@angular/http@2.0.0-rc.5",
@@ -35,7 +35,7 @@
   "_shasum": "3c5bc0552ea385e9b7fd6f9ddb09b3d9d30b2ca7",
   "_shrinkwrap": null,
   "_spec": "@angular/http@2.0.0-rc.5",
-  "_where": "C:\\Users\\Christopher\\documents\\visual studio 2015\\Projects\\WebApplication2\\src\\WebApplication2",
+  "_where": "C:\\Users\\christopher.new\\Documents\\Projects\\Personal\\ASPdotNET-Core-and-Angular-2\\src\\OpenGameListWebApp",
   "author": {
     "name": "angular"
   },

@@ -1,5 +1,6 @@
-System.register(["@angular/core"], function (exports_1, context_1) {
+System.register(["@angular/core"], function(exports_1, context_1) {
     "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9,29 +10,28 @@ System.register(["@angular/core"], function (exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var __moduleName = context_1 && context_1.id;
-    var core_1, AboutComponent;
+    var core_1;
+    var AboutComponent;
     return {
-        setters: [
+        setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            }
-        ],
-        execute: function () {
+            }],
+        execute: function() {
             AboutComponent = (function () {
                 function AboutComponent() {
                     this.title = "About";
                 }
+                AboutComponent = __decorate([
+                    core_1.Component({
+                        selector: "about",
+                        template: "\n        <h2>{{title}}</h2>\n        <div>\n            OpenGameList: a production-ready, fully featured SPA sample powered by ASP.NET Core Web API and Angular 2.\n        </div>\n    "
+                    }), 
+                    __metadata('design:paramtypes', [])
+                ], AboutComponent);
                 return AboutComponent;
             }());
-            AboutComponent = __decorate([
-                core_1.Component({
-                    selector: "about",
-                    template: "\n        <h2>{{title}}</h2>\n        <div>\n            OpenGameList: a production-ready, fully featured SPA sample powered by ASP.NET Core Web API and Angular 2.\n        </div>\n    "
-                }),
-                __metadata("design:paramtypes", [])
-            ], AboutComponent);
             exports_1("AboutComponent", AboutComponent);
         }
-    };
+    }
 });

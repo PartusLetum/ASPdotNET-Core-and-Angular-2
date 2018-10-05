@@ -1,5 +1,6 @@
-System.register(["@angular/core", "@angular/router", "./item.service"], function (exports_1, context_1) {
+System.register(["@angular/core", "@angular/router", "./item.service"], function(exports_1, context_1) {
     "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9,10 +10,10 @@ System.register(["@angular/core", "@angular/router", "./item.service"], function
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var __moduleName = context_1 && context_1.id;
-    var core_1, router_1, item_service_1, ItemDetailComponent;
+    var core_1, router_1, item_service_1;
+    var ItemDetailComponent;
     return {
-        setters: [
+        setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
@@ -21,9 +22,8 @@ System.register(["@angular/core", "@angular/router", "./item.service"], function
             },
             function (item_service_1_1) {
                 item_service_1 = item_service_1_1;
-            }
-        ],
-        execute: function () {
+            }],
+        execute: function() {
             ItemDetailComponent = (function () {
                 function ItemDetailComponent(itemService, router, activatedRoute) {
                     this.itemService = itemService;
@@ -43,19 +43,17 @@ System.register(["@angular/core", "@angular/router", "./item.service"], function
                         this.router.navigate([""]);
                     }
                 };
+                ItemDetailComponent = __decorate([
+                    core_1.Component({
+                        selector: "item-detail",
+                        template: "\n        <div *ngIf=\"item\" class=\"item-details\">\n            <h2>{item.Title} - Detail View</h2>\n            <ul>\n                <li>\n                    <label>Title:</label>\n                    <input [(ngModel)]=\"item.Title\" placeholder=\"Insert the title...\"/>\n                </li>\n                <li>\n                    <label>Description:</label>\n                    <textarea [(ngModel)]=\"item.Description\" placeholder=\"Insert a suitable description...\"></textarea>\n                </li>\n            </ul>\n        </div>\n    ",
+                        styles: ["\n        .item-details {\n            margin: 5px;\n            padding: 5px 10px;\n            border: 1px solid black;\n            background-color: #dddddd;\n            width: 300px;\n        }\n        .item-details * {\n            vertical-align: middle;\n        }\n        .item-details ul li {\n            padding: 5px 0;\n        }\n    "]
+                    }), 
+                    __metadata('design:paramtypes', [item_service_1.ItemService, router_1.Router, router_1.ActivatedRoute])
+                ], ItemDetailComponent);
                 return ItemDetailComponent;
             }());
-            ItemDetailComponent = __decorate([
-                core_1.Component({
-                    selector: "item-detail",
-                    template: "\n        <div *ngIf=\"item\" class=\"item-details\">\n            <h2>{item.Title} - Detail View</h2>\n            <ul>\n                <li>\n                    <label>Title:</label>\n                    <input [(ngModel)]=\"item.Title\" placeholder=\"Insert the title...\"/>\n                </li>\n                <li>\n                    <label>Description:</label>\n                    <textarea [(ngModel)]=\"item.Description\" placeholder=\"Insert a suitable description...\"></textarea>\n                </li>\n            </ul>\n        </div>\n    ",
-                    styles: ["\n        .item-details {\n            margin: 5px;\n            padding: 5px 10px;\n            border: 1px solid black;\n            background-color: #dddddd;\n            width: 300px;\n        }\n        .item-details * {\n            vertical-align: middle;\n        }\n        .item-details ul li {\n            padding: 5px 0;\n        }\n    "]
-                }),
-                __metadata("design:paramtypes", [item_service_1.ItemService,
-                    router_1.Router,
-                    router_1.ActivatedRoute])
-            ], ItemDetailComponent);
             exports_1("ItemDetailComponent", ItemDetailComponent);
         }
-    };
+    }
 });

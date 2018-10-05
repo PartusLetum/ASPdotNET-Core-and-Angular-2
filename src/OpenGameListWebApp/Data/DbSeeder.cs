@@ -17,6 +17,10 @@ namespace OpenGameListWebApp.Data
         #endregion Private Memnber
 
         #region Constructor
-        public 
+        public DbSeeder(ApplicationDbContext dbContext)
+        {
+            DbContext = dbContext;
+        }
+        #endregion Constructor
     }
 }

@@ -1,5 +1,6 @@
-System.register(["@angular/core", "@angular/router", "./item.service"], function (exports_1, context_1) {
+System.register(["@angular/core", "@angular/router", "./item.service"], function(exports_1, context_1) {
     "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9,10 +10,10 @@ System.register(["@angular/core", "@angular/router", "./item.service"], function
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var __moduleName = context_1 && context_1.id;
-    var core_1, router_1, item_service_1, ItemListComponent;
+    var core_1, router_1, item_service_1;
+    var ItemListComponent;
     return {
-        setters: [
+        setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
@@ -21,9 +22,8 @@ System.register(["@angular/core", "@angular/router", "./item.service"], function
             },
             function (item_service_1_1) {
                 item_service_1 = item_service_1_1;
-            }
-        ],
-        execute: function () {
+            }],
+        execute: function() {
             ItemListComponent = (function () {
                 function ItemListComponent(itemService, router) {
                     this.itemService = itemService;
@@ -55,21 +55,21 @@ System.register(["@angular/core", "@angular/router", "./item.service"], function
                     console.log("item with Id " + this.selectedItem.Id + " has been clicked: loading ItemDetailComponent...");
                     this.router.navigate(["item", this.selectedItem.Id]);
                 };
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', String)
+                ], ItemListComponent.prototype, "class", void 0);
+                ItemListComponent = __decorate([
+                    core_1.Component({
+                        selector: "item-list",
+                        template: " \n        <h2>{{title}}</h2> \n            <ul class=\"items\"> \n            <li *ngFor=\"let item of items\"  \n                [class.selected]=\"item === selectedItem\" \n                (click)=\"onSelect(item)\"> \n                <span>{{item.Title}}</span> \n            </li> \n        </ul> \n    ",
+                        styles: [" \n        ul.items li {  \n            cursor: pointer; \n        } \n        ul.items li.selected {  \n            background-color: #cccccc;  \n        } \n    "]
+                    }), 
+                    __metadata('design:paramtypes', [item_service_1.ItemService, router_1.Router])
+                ], ItemListComponent);
                 return ItemListComponent;
             }());
-            __decorate([
-                core_1.Input(),
-                __metadata("design:type", String)
-            ], ItemListComponent.prototype, "class", void 0);
-            ItemListComponent = __decorate([
-                core_1.Component({
-                    selector: "item-list",
-                    template: " \n        <h2>{{title}}</h2> \n            <ul class=\"items\"> \n            <li *ngFor=\"let item of items\"  \n                [class.selected]=\"item === selectedItem\" \n                (click)=\"onSelect(item)\"> \n                <span>{{item.Title}}</span> \n            </li> \n        </ul> \n    ",
-                    styles: [" \n        ul.items li {  \n            cursor: pointer; \n        } \n        ul.items li.selected {  \n            background-color: #cccccc;  \n        } \n    "]
-                }),
-                __metadata("design:paramtypes", [item_service_1.ItemService, router_1.Router])
-            ], ItemListComponent);
             exports_1("ItemListComponent", ItemListComponent);
         }
-    };
+    }
 });
